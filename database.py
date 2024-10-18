@@ -1,11 +1,12 @@
 import mysql.connector
-user="root"
-password="1234567890"
-database="live_project"
+localhost="bnqlngevekwgprgsjot1-mysql.services.clever-cloud.com"
+user="ukr0bzutnjdxv2cr"
+password="vozXYe6uSTvqNzufabL6"
+database="bnqlngevekwgprgsjot1"
 
 
 def select(q):
-	con=mysql.connector.connect(user=user,password=password,host="localhost",database=database,port=3306)
+	con=mysql.connector.connect(user=user,password=password,host=localhost,database=database,port=3306)
 	cur=con.cursor(dictionary=True)
 	cur.execute(q)
 	result=cur.fetchall()
@@ -14,7 +15,7 @@ def select(q):
 	return result
 
 def insert(q):
-	con=mysql.connector.connect(user=user,password=password,host="localhost",database=database,port=3306)
+	con=mysql.connector.connect(user=user,password=password,host=localhost,database=database,port=3306)
 	cur=con.cursor(dictionary=True)
 	cur.execute(q)
 	con.commit()
@@ -24,7 +25,7 @@ def insert(q):
 	return result
 
 def update(q):
-	con=mysql.connector.connect(user=user,password=password,host="localhost",database=database,port=3306)
+	con=mysql.connector.connect(user=user,password=password,host=localhost,database=database,port=3306)
 	cur=con.cursor(dictionary=True)
 	cur.execute(q)
 	con.commit()
@@ -34,7 +35,7 @@ def update(q):
 	return res
 
 def delete(q):
-	con=mysql.connector.connect(user=user,password=password,host="localhost",database=database,port=3306)
+	con=mysql.connector.connect(user=user,password=password,host=localhost,database=database,port=3306)
 	cur=con.cursor(dictionary=True)
 	cur.execute(q)
 	con.commit()
